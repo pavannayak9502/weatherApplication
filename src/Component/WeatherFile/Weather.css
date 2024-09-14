@@ -1,0 +1,230 @@
+#header1{       /* Main Header */
+    margin-top: 55px;
+    text-align: center;
+    border: none;
+    color: white;
+    background-color: transparent;
+    border-radius: 25px;
+    padding: 1rem;
+    box-sizing: border-box;
+    width: 500px;
+    margin: auto;
+    position: relative;
+    font-family: cursive;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+#header1::after, #header1::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 25px;
+    animation: 3s spin linear infinite;
+}
+#header1::before{
+    filter: blur(1rem);
+    opacity: 1.0;
+}
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+
+
+.weather{       /* Keep this div only for large window */
+    width:500px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+
+form{       /*   Overall Form tag  */
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    align-self: center;
+
+}
+input{          /*   User Input Form  */
+    box-sizing: border-box;
+    width: 40%;
+    padding: 10px;
+    border-radius: 15px;
+    margin: auto;
+    color: red;
+    font-size: large;
+    font-weight: bold;
+    font-family: cursive;
+    text-align: center;
+}
+input:active{
+    border: 5px solid red;
+}
+
+button{
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: large;
+    width: 40%;
+    align-items: center;
+    margin: 15px auto;
+}
+button:hover{
+    cursor: pointer;
+    background-color: green;
+    color: white;
+    transition: 0.5s;
+}
+
+
+
+
+.weatherData{       /*  Displaying data from the API */
+    box-sizing: border-box;
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 1rem;
+    align-self: center;
+    text-align: center;
+    color: white;
+    width: 350px;
+    margin: auto;
+    border: none;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+
+
+@media only screen and (max-width: 420px){
+    #header1{       /* Main Header */
+        margin-top: 55px;
+        text-align: center;
+        color: white;
+        background-color: transparent;
+        border: none;
+        border-radius: 25px;
+        padding: 1rem;
+        font-size: large;
+        box-sizing: border-box;
+        width: 350px;
+        margin: auto;
+        font-family: cursive;
+    }
+    @property --angle{
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+    }
+    #header1::after, #header1::before{
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545);
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;
+        padding: 5px;
+        border-radius: 25px;
+        animation: 3s spin linear infinite;
+    }
+    #header1::before{
+        filter: blur(1rem);
+        opacity: 1.0;
+    }
+    @keyframes spin{
+        from{
+            --angle: 0deg;
+        }
+        to{
+            --angle: 360deg;
+        }
+    }
+    
+
+    .weather{       /* Keep this div only for large window */
+        width:400px;
+        box-sizing: border-box;
+        margin: auto;
+    }
+
+    form{       /*   Overall Form tag  */
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        align-self: center;
+    
+    }
+   
+    input{          /*   User Input Form  */
+        box-sizing: border-box;
+        width: 70%;
+        padding: 10px;
+        border-radius: 15px;
+        margin: auto;
+        color: red;
+        font-size: large;
+        font-weight: bold;
+        font-family: cursive;
+    }
+    input:active{
+        border: 5px solid red;
+    }
+    
+    button{
+        box-sizing: border-box;
+        padding: 8px;
+        border-radius: 1rem;
+        font-weight: bold;
+        font-size: large;
+        width: 35%;
+        align-items: center;
+        margin: 15px auto;
+    }
+    button:hover{
+        background-color: green;
+        color: white;
+        cursor: pointer;
+        transition: 1s;
+
+    }
+    
+    
+    
+    
+    .weatherData{       /*  Displaying data from the API */
+        box-sizing: border-box;
+        display: none;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 1rem;
+        align-self: center;
+        text-align: center;
+        color: white;
+        width: 350px;
+        margin: auto;
+        border: none;
+        border-radius: 30px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+};
+
